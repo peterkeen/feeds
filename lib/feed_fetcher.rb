@@ -16,7 +16,7 @@ class FeedFetcher
 
     content.entries.each do |entry|
       next if Article.where(:feed_id => @feed.id, :guid => entry.entry_id).count > 0
-      Article.create!(
+      article = Article.create!(
         :feed_id      => @feed.id,
         :guid         => entry.entry_id,
         :title        => entry.title,
@@ -24,7 +24,9 @@ class FeedFetcher
         :content      => (entry.content || entry.summary),
         :published_at => entry.updated
       )
+      ArticleMailer.send_article(article).deliver
     end
+    nil
   end
 
   def fetch_content(force = false)

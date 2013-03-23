@@ -51,5 +51,6 @@ production:
   encoding: unicode
   database: feeds_production
   pool: 5
+  host: localhost
   username: feeds
-  password:
+  password: password
