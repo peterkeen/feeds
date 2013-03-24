@@ -23,7 +23,7 @@ and add a feed or two. Posts should start showing up in your inbox within 10 min
 
 You can also install this on your own machine using Capistrano and Capistrano Buildpack. There's an example Capfile provided.
 
-### Variables
+## Variables
 
 * `USERNAME`: username for http basic auth
 * `PASSWORD`: password for http basic auth
