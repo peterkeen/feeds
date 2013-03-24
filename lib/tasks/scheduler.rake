@@ -1,4 +1,5 @@
 require 'feed_fetcher'
+require 'feed'
 
 task :scheduler => :environment do
   puts "Starting scheduler"
