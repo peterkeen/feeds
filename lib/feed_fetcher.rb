@@ -1,8 +1,8 @@
 class FeedFetcher
 
   def self.run
+    STDERR.puts "Starting fetcher"
     while true
-      puts "Starting fetcher"
       Feed.all.each do |feed|
         puts "Fetching feed #{feed.id} from #{feed.url}"
         self.new(feed).fetch
