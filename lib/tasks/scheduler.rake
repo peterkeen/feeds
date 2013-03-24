@@ -1,17 +1,14 @@
 require 'feed_fetcher'
-require 'feed'
 
 task :scheduler => :environment do
   puts "Starting scheduler"
-  scheduler = Rufus::Scheduler.start_new
 
-  scheduler.every '10m' do
+  while true
     Feed.all.each do |feed|
       puts "Fetching feed #{feed.id} from #{feed.url}"
       FeedFetcher.new(feed).fetch
     end
+    sleep 60*10
   end
-
-  scheduler.join
 
 end
