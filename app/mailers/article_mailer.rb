@@ -11,7 +11,7 @@ class ArticleMailer < ActionMailer::Base
     @title = strip_entities(article.title).html_safe
 
     mail to:      'pete@bugsplat.info',
-         from:    "#{strip_entities(article.feed)} <feeds@bugsplat.info>",
+         from:    "#{strip_entities(article.feed.name)} <feeds@bugsplat.info>",
          subject: strip_entities(article.title)
   end
 end
