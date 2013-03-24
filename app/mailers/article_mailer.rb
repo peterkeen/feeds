@@ -9,7 +9,7 @@ class ArticleMailer < ActionMailer::Base
     @title = strip_entities(article.title).html_safe
 
     mail to:      ENV['TO_EMAIL'],
-         from:    "#{strip_entities(article.feed.name)} <#{ENV['FROM_EMAIL']}>>",
+         from:    "#{strip_entities(article.feed.name)} <#{ENV['FROM_EMAIL']}>",
          subject: strip_entities(article.title)
   end
 end
