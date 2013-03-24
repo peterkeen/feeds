@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315234832) do
+ActiveRecord::Schema.define(:version => 20130324062147) do
 
   create_table "articles", :force => true do |t|
-    t.string   "title"
-    t.string   "url"
+    t.text     "title"
+    t.text     "url"
     t.text     "description"
     t.string   "guid"
     t.datetime "published_at"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20130315234832) do
 
   create_table "feeds", :force => true do |t|
     t.string   "url"
-    t.string   "name"
+    t.text     "name"
     t.string   "etag"
     t.datetime "last_fetched_at"
     t.datetime "created_at",      :null => false
