@@ -62,6 +62,7 @@ module Feeds
     config.after_initialize do
       if ENV['PORT'] && ENV['FETCH_IN_PROCESS'] == 'true'
         Thread.new do
+          sleep 5
           puts "Starting fetcher"
           FeedFetcher.run
         end
