@@ -14,7 +14,20 @@ not just because it was the handiest hammer in the toolbox.
     $ heroku addons:add sendgrid
     $ git push heroku master
     $ heroku run rake db:migrate
-    $ heroku config:add USERNAME=username PASSWORD=password FROM_EMAIL=feeds@example.comm TO_EMAIL=you@example.com FETCH_IN_PROCESS=true FETCH_INTERVAL=600
+    $ heroku config:add USERNAME=username PASSWORD=password FROM_EMAIL=feeds@example.com TO_EMAIL=you@example.com FETCH_IN_PROCESS=true FETCH_INTERVAL=600
 
 Navigate to http://your-app.herokuapp.com, login with your username and password,
-and add a feed or two. Within 10 minutes
+and add a feed or two. Posts should start showing up in your inbox within 10 minutes.
+
+## Installation on a VPS
+
+You can also install this on your own machine using Capistrano and Capistrano Buildpack. There's an example Capfile provided.
+
+### Variables
+
+* `USERNAME`: username for http basic auth
+* `PASSWORD`: password for http basic auth
+* `FROM_EMAIL`: email address where articles should appear to come from
+* `TO_EMAIL`: email address where articles should show up
+* `FETCH_IN_PROCESS`: `true` to fetch in the Rails process, absent to fetch using `rake scheduler`
+* `FETCH_INTERVAL`: number of seconds to wait between fetching feeds
