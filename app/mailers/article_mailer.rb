@@ -1,7 +1,7 @@
 class ArticleMailer < ActionMailer::Base
   default :from => 'feeds@bugsplat.info'
 
-  helper ApplicationHelper
+  helper :application
 
   def send_article(article)
     @article = article
