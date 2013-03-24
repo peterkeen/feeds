@@ -60,6 +60,7 @@ module Feeds
     config.assets.version = '1.0'
 
     config.after_initialize do
+      require 'feed_fetcher'
       if ENV['PORT'] && ENV['FETCH_IN_PROCESS'] == 'true'
         Thread.new do
           sleep 5
