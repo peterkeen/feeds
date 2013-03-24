@@ -1,3 +1,5 @@
+require 'feed_fetcher'
+
 task :scheduler => :environment do
   puts "Starting scheduler"
   scheduler = Rufus::Scheduler.start_new
