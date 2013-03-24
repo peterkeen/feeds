@@ -1,4 +1,16 @@
 class FeedFetcher
+
+  def self.run
+    while true
+      Feed.all.each do |feed|
+        puts "Fetching feed #{feed.id} from #{feed.url}"
+        self.new(feed).fetch
+      end
+
+      sleep ENV['FETCH_INTERVAL'].to_i
+    end
+  end
+  
   def initialize(feed)
     @feed = feed
   end
