@@ -58,5 +58,14 @@ module Feeds
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.after_initialize do
+      if ENV['PORT'] && ENV['FETCH_IN_PROCESS'] == 'true'
+        Thread.new do
+          puts "Starting fetcher"
+          FeedFetcher.run
+        end
+      end
+    end
   end
 end
