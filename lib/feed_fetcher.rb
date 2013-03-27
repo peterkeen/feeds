@@ -4,8 +4,12 @@ class FeedFetcher
     STDERR.puts "Starting fetcher"
     while true
       Feed.all.each do |feed|
-        puts "Fetching feed #{feed.id} from #{feed.url}"
-        self.new(feed).fetch
+        begin
+          puts "Fetching feed #{feed.id} from #{feed.url}"
+          self.new(feed).fetch
+        rescue Exception => e
+          puts "Error when fetching feed #{feed.id}: #{e.message}"
+        end
       end
 
       sleep ENV['FETCH_INTERVAL'].to_i
