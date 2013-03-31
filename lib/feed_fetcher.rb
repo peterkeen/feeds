@@ -2,7 +2,8 @@ class FeedFetcher
 
   def self.run
     STDERR.puts "Starting fetcher"
-    while true
+    scheduler = Rufus::Scheduler.start_new
+    scheduler.every ENV['FETCH_INTERVAL'] + 's' do
       Feed.all.each do |feed|
         begin
           puts "Fetching feed #{feed.id} from #{feed.url}"
@@ -11,9 +12,8 @@ class FeedFetcher
           puts "Error when fetching feed #{feed.id}: #{e.message}"
         end
       end
-
-      sleep ENV['FETCH_INTERVAL'].to_i
     end
+    scheduler.join
   end
   
   def initialize(feed)
