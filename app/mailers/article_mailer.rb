@@ -2,6 +2,7 @@ class ArticleMailer < ActionMailer::Base
   def strip_entities(text)
     text.gsub(/&nbsp;/, ' ')
     text.gsub(/&.{0,}?;/, '')
+    text.gsub(/:/, ' ')
   end
 
   def send_article(article)
