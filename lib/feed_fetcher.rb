@@ -36,7 +36,7 @@ class FeedFetcher
       article = Article.create!(
         :feed_id      => @feed.id,
         :guid         => entry.entry_id,
-        :title        => entry.title,
+        :title        => entry.title.gsub('&nbsp;', ' '),
         :url          => entry.url,
         :content      => (entry.content || entry.summary),
         :published_at => entry.updated
