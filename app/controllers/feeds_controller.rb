@@ -65,8 +65,6 @@ class FeedsController < ApplicationController
 
   def remove
     @feed = Feed.find(parmas[:id])
-    @feed.destroy!
-    redirect_to feeds_url
   end
 
   # PUT /feeds/1

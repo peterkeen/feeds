@@ -75,7 +75,7 @@ GEM
     multi_json (1.6.1)
     multi_xml (0.5.2)
     nokogiri (1.4.7)
-    pg (0.14.1)
+    pg (0.15.1)
     polyglot (0.3.3)
     puma (1.6.3)
       rack (~> 1.2)
