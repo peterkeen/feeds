@@ -64,7 +64,7 @@ class FeedsController < ApplicationController
   end
 
   def remove
-    @feed = Feed.find(parmas[:id])
+    @feed = Feed.find(params[:id])
   end
 
   # PUT /feeds/1

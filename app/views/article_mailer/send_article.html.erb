@@ -1,9 +1,6 @@
 <%= @article.content.html_safe %>
 
+<hr>
+
 <p><a href="<%= @article.url %>">Original Article</a></p>
-
-
-
-
-
-
+<p><a href="<%= remove_feed_url(@article.feed) %>">Remove Feed</a></p>

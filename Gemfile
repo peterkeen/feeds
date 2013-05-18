@@ -10,6 +10,7 @@ gem 'rufus-scheduler'
 gem 'therubyracer'
 gem 'puma'
 gem 'feedbag'
+gem 'mail_view', :git => 'https://github.com/37signals/mail_view.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,4 +1,9 @@
 Feeds::Application.routes.draw do
+      
+  if Rails.env.development?
+    mount MailPreview => 'mail_view'
+  end
+
   resources :articles
 
   resources :feeds do

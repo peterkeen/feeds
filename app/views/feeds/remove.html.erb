@@ -1,4 +1,4 @@
-<h1>Deleting '<%= @feed.title %>'</h1>
+<h1>Deleting '<%= @feed.name %>'</h1>
 
 <p>Are you sure you want to delete this feed?</p>
-<p><%= link_to @feed, method: delete %></p>
+<p><%= link_to "Remove Feed", @feed, method: :delete %></p>
