@@ -26,4 +26,4 @@
 
 <br />
 
-<%= link_to 'New Feed', new_feed_path %>
+<p><%= link_to 'Bookmarklet', "javascript:(function()%7B(function()%7Bvar%20url=encodeURIComponent(window.location);window.location=%22#{add_feeds_url}%22+url;;%7D)();%7D)();" %></p>
