@@ -1,16 +1,10 @@
 class Feed < ActiveRecord::Base
   attr_accessible :etag, :last_fetched_at, :name, :url
   has_many :articles
+  validates_presence_of :url
 
   def self.new_from_url(url)
     feeds = Feedbag.find(url)
-    obj = self.new
-
-    if feeds.length > 0
-      obj.url = feeds[0]
-    else
-      obj.errors[:base] << "could not find a feed for url #{url}"
-    end
-    obj
+    self.new(url: feeds[0])
   end
 end
