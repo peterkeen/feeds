@@ -26,4 +26,4 @@
 
 <br />
 
-<p><%= link_to 'Bookmarklet', "javascript:(function(){var%20url=encodeURIComponent(window.location);window.location=\"#{add_feeds_url}\"?url=%22+url;})();" %></p>
+<p><%= link_to 'Bookmarklet', "javascript:(function(){var%20url=encodeURIComponent(window.location);window.location='#{add_feeds_url}?url='+url;})();" %></p>
