@@ -1,8 +1,16 @@
 Feeds::Application.routes.draw do
   resources :articles
 
+  resources :feeds do
+    collection do
+      get 'add'
+    end
 
-  resources :feeds
+    member do
+      get 'remove'
+    end
+  end
+      
 
 
   # The priority is based upon order of creation:

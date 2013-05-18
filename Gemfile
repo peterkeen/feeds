@@ -9,6 +9,7 @@ gem 'pg'
 gem 'rufus-scheduler'
 gem 'therubyracer'
 gem 'puma'
+gem 'feedbag'
 
 # Gems used only for assets and not required
 # in production environments by default.

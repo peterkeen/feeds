@@ -1,0 +1,7 @@
+<h1>Error adding feed from URL <%= @url %></h1>
+<ul>
+<% @feed.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+</ul>
+

@@ -41,6 +41,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    feedbag (0.9.1)
+      hpricot (>= 0.6)
     feedzirra (0.0.31)
       activesupport (>= 3.0.8)
       builder (~> 3.0.0)
@@ -52,6 +54,7 @@ GEM
       rdoc (~> 3.8)
       sax-machine (~> 0.0.20)
     hike (1.2.1)
+    hpricot (0.8.6)
     httparty (0.10.2)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -134,6 +137,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  feedbag
   feedzirra
   httparty
   jquery-rails

@@ -53,6 +53,22 @@ class FeedsController < ApplicationController
     end
   end
 
+  def add
+    @url = params[:url]
+    @feed = Feed.new_from_url(@url)
+    if @feed.save
+      redirect_to :back
+    else
+      render :error
+    end
+  end
+
+  def remove
+    @feed = Feed.find(parmas[:id])
+    @feed.destroy!
+    redirect_to feeds_url
+  end
+
   # PUT /feeds/1
   # PUT /feeds/1.json
   def update
