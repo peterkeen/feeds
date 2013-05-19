@@ -14,7 +14,7 @@ not just because it was the handiest hammer in the toolbox.
     $ heroku addons:add sendgrid
     $ git push heroku master
     $ heroku run rake db:migrate
-    $ heroku config:add USERNAME=username PASSWORD=password FROM_EMAIL=feeds@example.com TO_EMAIL=you@example.com FETCH_IN_PROCESS=true FETCH_INTERVAL=600
+    $ heroku config:add USERNAME=username PASSWORD=password FROM_EMAIL=feeds@example.com TO_EMAIL=you@example.com FETCH_IN_PROCESS=true FETCH_INTERVAL=600 APP_DOMAIN=your-app.herokuapp.com
 
 Navigate to http://your-app.herokuapp.com, login with your username and password,
 and add a feed or two. Posts should start showing up in your inbox within 10 minutes.
