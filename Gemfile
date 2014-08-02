@@ -42,3 +42,5 @@ gem 'feedzirra'
 
 # To use debugger
 # gem 'debugger'
+gem 'capistrano', '2.12.0'
+gem 'capistrano-buildpack', '0.0.11'
