@@ -6,7 +6,7 @@ set :repository, "git@git.bugsplat.info:peter/feeds.git"
 set :scm, :git
 set :additional_domains, ['feeds.bugsplat.info']
 
-role :web, "empoknor.bugsplat.info"
+role :web, "subspace.bugsplat.info"
 set :buildpack_url, "git@git.bugsplat.info:peter/bugsplat-buildpack-ruby-simple"
 
 set :user, "peter"

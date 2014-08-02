@@ -51,19 +51,15 @@ Feeds::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
-  if ENV['SENDGRID_USERNAME']
-    config.action_mailer.smtp_settings = {
-      :address        => 'smtp.sendgrid.net',
-      :port           => '587',
-      :authentication => :plain,
-      :user_name      => ENV['SENDGRID_USERNAME'],
-      :password       => ENV['SENDGRID_PASSWORD'],
-      :domain         => 'heroku.com',
-      :enable_starttls_auto => true
-    }
-  else
-    config.action_mailer.delivery_method = :sendmail
-  end
+  config.action_mailer.smtp_settings = {
+    :address        => ENV['SMTP_SERVER_ADDRESS'],
+    :port           => ENV['SMTP_SERVER_PORT'],
+    :authentication => :plain,
+    :user_name      => ENV['SMTP_SERVER_USERNAME'],
+    :password       => ENV['SMTP_SERVER_PASSWORD'],
+    :domain         => ENV['SMTP_SERVER_DOMAIN'],
+    :enable_starttls_auto => true
+  }
 
   # Enable threaded mode
   config.threadsafe!
