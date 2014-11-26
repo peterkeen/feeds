@@ -24,7 +24,7 @@ class FeedFetcher
     response = fetch_content(force)
     return if response.code == 304
 
-    content = Feedzirra::Feed.parse(response.body)
+    content = Feedjira::Feed.parse(response.body)
 
     @feed.etag = content.etag
     @feed.last_fetched_at = content.last_modified
