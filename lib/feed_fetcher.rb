@@ -39,7 +39,7 @@ class FeedFetcher
         :title        => entry.title.gsub('&nbsp;', ' '),
         :url          => entry.url,
         :content      => (entry.content || entry.summary),
-        :published_at => entry.updated
+        :published_at => entry.try(:updated)
       )
       ArticleMailer.send_article(article).deliver
     end
