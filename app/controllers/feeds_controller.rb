@@ -40,7 +40,7 @@ class FeedsController < ApplicationController
   # POST /feeds
   # POST /feeds.json
   def create
-    @feed = Feed.new(params[:feed])
+    @feed = Feed.new(feed_params)
 
     respond_to do |format|
       if @feed.save
@@ -73,7 +73,7 @@ class FeedsController < ApplicationController
     @feed = Feed.find(params[:id])
 
     respond_to do |format|
-      if @feed.update_attributes(params[:feed])
+      if @feed.update_attributes(feed_params)
         format.html { redirect_to @feed, notice: 'Feed was successfully updated.' }
         format.json { head :no_content }
       else
@@ -93,5 +93,9 @@ class FeedsController < ApplicationController
       format.html { redirect_to feeds_url }
       format.json { head :no_content }
     end
+  end
+
+  def feed_params
+    params.require(:feed).permit!
   end
 end

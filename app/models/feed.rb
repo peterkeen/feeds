@@ -1,5 +1,4 @@
 class Feed < ActiveRecord::Base
-  attr_accessible :etag, :last_fetched_at, :name, :url
   has_many :articles
   validates_presence_of :url
 
