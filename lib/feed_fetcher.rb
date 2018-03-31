@@ -4,16 +4,20 @@ class FeedFetcher
     STDERR.puts "Starting fetcher"
     scheduler = Rufus::Scheduler.start_new
     scheduler.every ENV['FETCH_INTERVAL'] + 's' do
-      Feed.all.each do |feed|
-        begin
-          puts "Fetching feed #{feed.id} from #{feed.url}"
-          self.new(feed).fetch
-        rescue Exception => e
-          puts "Error when fetching feed #{feed.id}: #{e.message}"
-        end
-      end
+      run_once
     end
     scheduler.join
+  end
+
+  def self.run_once
+    Feed.find_each do |feed|
+      begin
+        puts "Fetching feed #{feed.id} from #{feed.url}"
+        self.new(feed).fetch
+      rescue Exception => e
+        puts "Error when fetching feed #{feed.id}: #{e.message}"
+      end
+    end    
   end
   
   def initialize(feed)
