@@ -6,3 +6,9 @@ task :scheduler => :environment do
 
   FeedFetcher.run
 end
+
+task :fetch => :environment do
+  Rails.application.eager_load!
+  puts "Fetching feeds"
+  FeedFetcher.run_once
+end
