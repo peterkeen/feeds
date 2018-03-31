@@ -47,3 +47,4 @@ gem 'feedjira', '>= 1.0.0'
 
 gem 'listen'
 gem 'rails-controller-testing'
+gem "lograge"
