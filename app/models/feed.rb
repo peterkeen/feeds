@@ -6,4 +6,8 @@ class Feed < ActiveRecord::Base
     feeds = Feedbag.find(url)
     self.new(url: feeds[0])
   end
+
+  def list_id
+    "feed-#{feed.id}.bugsplat.feed.reader"
+  end
 end
