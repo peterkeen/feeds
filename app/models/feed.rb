@@ -8,6 +8,6 @@ class Feed < ActiveRecord::Base
   end
 
   def list_id
-    "feed-#{feed.id}.bugsplat.feed.reader"
+    "feed-#{self.id}.bugsplat.feed.reader"
   end
 end
