@@ -3,6 +3,7 @@ class ArticleMailer < ActionMailer::Base
     text.gsub(/&nbsp;/, ' ')
     text.gsub(/&.{0,}?;/, '')
     text.gsub(/:/, ' ')
+    text.gsub(/[<>]/, '-')
   end
 
   def send_article(article)

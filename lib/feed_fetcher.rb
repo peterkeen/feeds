@@ -32,7 +32,7 @@ class FeedFetcher
 
     @feed.etag = content.etag
     @feed.last_fetched_at = content.last_modified
-    @feed.name= content.title
+    @feed.name ||= content.title
     @feed.save!
 
     content.entries.each do |entry|
