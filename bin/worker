@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bundle exec rake scheduler 2>&1 | logger -t feeds-worker
+bundle exec rake scheduler 2>&1
