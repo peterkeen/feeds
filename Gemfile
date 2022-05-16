@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.4'
+ruby '2.7.2'
 
 gem 'rails', '5.1.6'
 
@@ -9,7 +9,6 @@ gem 'rails', '5.1.6'
 
 gem 'pg', '~> 0.18'
 gem 'rufus-scheduler'
-gem 'mini_racer'
 gem 'puma'
 gem 'feedbag'
 gem 'mail_view', :git => 'https://github.com/37signals/mail_view.git'
@@ -45,6 +44,6 @@ gem 'feedjira', '>= 1.0.0'
 # To use debugger
 # gem 'debugger'
 
-gem 'listen'
+#gem 'listen'
 gem 'rails-controller-testing'
 gem "lograge"
